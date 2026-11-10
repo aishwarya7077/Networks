@@ -8,23 +8,10 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="container">
-        <div className="footer__cta card">
-          <div>
-            <h3 className="footer__cta-title">Ready to upgrade your IT or secure your facility?</h3>
-            <p className="muted">Talk to our technical team for a free, no-obligation consultation.</p>
-          </div>
-          <div className="footer__cta-actions">
-            <a href={company.whatsapp} target="_blank" rel="noreferrer" className="btn btn-whatsapp">
-              <MessageCircle /> Chat on WhatsApp
-            </a>
-            <Link to="/contact" className="btn btn-ghost">Get in touch <ArrowUpRight /></Link>
-          </div>
-        </div>
-
         <div className="footer__grid">
           <div className="footer__brand">
             <Link to="/" className="footer__logo">
-              <Logo size={40} />
+              <Logo size={46} />
               <span>RYG<span className="footer__logo-soft">Networks</span></span>
             </Link>
             <p className="muted footer__blurb">

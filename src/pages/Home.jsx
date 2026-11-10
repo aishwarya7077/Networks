@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import {
@@ -9,6 +10,8 @@ import ServiceCard from '../components/ServiceCard'
 import Reveal from '../components/Reveal'
 
 export default function Home() {
+  const [showAll, setShowAll] = useState(false)
+  const visibleServices = showAll ? services : services.slice(0, 3)
   return (
     <>
       {/* ===== Hero ===== */}
@@ -117,18 +120,23 @@ export default function Home() {
           </Reveal>
 
           <div className="grid grid-3">
-            {services.map((s, i) => (
+            {visibleServices.map((s, i) => (
               <Reveal key={s.id} delay={(i % 3) * 0.08}>
                 <ServiceCard service={s} />
               </Reveal>
             ))}
           </div>
 
-          <Reveal className="section-head--center" delay={0.1}>
-            <div style={{ textAlign: 'center', marginTop: 44 }}>
-              <Link to="/services" className="btn btn-primary">See all services in detail <ArrowUpRight /></Link>
-            </div>
-          </Reveal>
+          <div style={{ textAlign: 'center', marginTop: 44, display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={() => setShowAll((v) => !v)}
+            >
+              {showAll ? 'Show less' : 'See more services'} <ArrowUpRight />
+            </button>
+            <Link to="/services" className="btn btn-ghost">View full details <ArrowUpRight /></Link>
+          </div>
         </div>
       </section>
 

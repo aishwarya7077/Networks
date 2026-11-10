@@ -28,10 +28,8 @@ export default function Navbar() {
     <header className={`nav ${scrolled ? 'nav--scrolled' : ''}`}>
       <div className="container nav__inner">
         <Link to="/" className="nav__brand" aria-label={company.name}>
-          <Logo />
-          <span className="nav__brand-text">
-            RYG<span className="nav__brand-accent">Networks</span>
-          </span>
+          <Logo size={44} />
+          <span className="nav__brand-text">RYG<span className="nav__brand-accent">Networks</span></span>
         </Link>
 
         <nav className="nav__links" aria-label="Primary">

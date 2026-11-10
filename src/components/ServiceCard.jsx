@@ -4,7 +4,16 @@ export default function ServiceCard({ service, detailed = false }) {
   const Icon = service.icon
   return (
     <article className="card service-card">
-      <span className="icon-badge"><Icon /></span>
+      <div className="service-card__media">
+        <img
+          src={`/images/${service.id}.png`}
+          alt={`${service.title} — RYG Networks`}
+          loading="lazy"
+          width="640"
+          height="360"
+        />
+        <span className="icon-badge service-card__badge"><Icon /></span>
+      </div>
       <h3 className="service-card__title">{service.title}</h3>
       <p className="service-card__text muted">{service.short}</p>
       {detailed && (
