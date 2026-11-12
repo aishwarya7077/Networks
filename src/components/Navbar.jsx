@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { NavLink, Link, useLocation } from 'react-router-dom'
-import { Menu, X, ArrowUpRight } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { navLinks, company } from '../data/site'
 import Logo from './Logo'
 import './Navbar.css'
@@ -45,13 +45,6 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <div className="nav__cta">
-          <a href={`tel:${company.phoneHref}`} className="nav__phone">{company.phone}</a>
-          <Link to="/contact" className="btn btn-primary nav__cta-btn">
-            Get a Quote <ArrowUpRight />
-          </Link>
-        </div>
-
         <button
           className="nav__toggle"
           onClick={() => setOpen((o) => !o)}
@@ -75,10 +68,6 @@ export default function Navbar() {
             </NavLink>
           ))}
         </nav>
-        <Link to="/contact" className="btn btn-primary nav__mobile-btn">
-          Get a Quote <ArrowUpRight />
-        </Link>
-        <a href={`tel:${company.phoneHref}`} className="nav__mobile-phone">{company.phone}</a>
       </div>
     </header>
   )

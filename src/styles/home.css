@@ -1,0 +1,127 @@
+/* =========================================================
+   RYG Networks — Home single-screen hero
+   One full-viewport section, big background scene, no scroll.
+   ========================================================= */
+
+/* --- Dark, legible navbar while on the home page --- */
+body.is-home .nav:not(.nav--scrolled) .nav__link,
+body.is-home .nav:not(.nav--scrolled) .nav__phone,
+body.is-home .nav:not(.nav--scrolled) .nav__brand { color: rgba(255, 255, 255, 0.86); }
+body.is-home .nav:not(.nav--scrolled) .nav__brand-accent { color: rgba(255, 255, 255, 0.6); }
+body.is-home .nav:not(.nav--scrolled) .nav__link:hover { color: #fff; background: rgba(255, 255, 255, 0.08); }
+body.is-home .nav:not(.nav--scrolled) .nav__link.is-active { color: #fff; }
+body.is-home .nav:not(.nav--scrolled) .nav__toggle {
+  color: #fff; background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.18);
+}
+
+/* ===================== Hero shell ===================== */
+.home-hero {
+  position: relative;
+  min-height: 100vh;
+  margin-top: calc(-1 * var(--nav-h));   /* pull the scene up behind the fixed nav */
+  padding: calc(var(--nav-h) + 24px) 0 40px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: #fff;
+  background:
+    radial-gradient(120% 95% at 82% 12%, rgba(34, 211, 238, 0.20), transparent 55%),
+    radial-gradient(95% 85% at 8% 100%, rgba(99, 102, 241, 0.26), transparent 60%),
+    linear-gradient(135deg, #0B2B60 0%, #0A1B40 52%, #050E22 100%);
+}
+
+/* ---------- Background image ---------- */
+.home-hero__bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.home-hero__photo {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: contain; object-position: center right;
+}
+/* Darken the left side so the headline stays crisp over the photo */
+.home-hero__overlay {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(90deg, rgba(5, 14, 34, 0.92) 0%, rgba(6, 17, 40, 0.75) 38%, rgba(6, 17, 40, 0.30) 72%, rgba(6, 17, 40, 0.15) 100%),
+    linear-gradient(0deg, rgba(4, 10, 26, 0.55), rgba(4, 10, 26, 0.15));
+}
+.home-hero__vignette {
+  position: absolute; inset: 0;
+  background: radial-gradient(130% 120% at 50% 50%, transparent 55%, rgba(3, 8, 20, 0.55) 100%);
+}
+
+/* ===================== Content layout ===================== */
+.home-hero__inner {
+  position: relative; z-index: 2;
+  width: 100%;
+}
+.home-hero__copy { max-width: 640px; }
+
+.home-hero__eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-display);
+  font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: #9fe6ff;
+  padding: 7px 15px; border-radius: 100px;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(120, 220, 255, 0.28);
+}
+.home-hero__eyebrow svg { color: #ffd34d; }
+
+.home-hero__title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.4rem, 5.2vw, 4.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin: 22px 0 0;
+  text-shadow: 0 2px 30px rgba(0, 0, 0, 0.35);
+}
+.home-hero__gold {
+  background: linear-gradient(92deg, #FFE08A 0%, #FFC13B 45%, #F59E0B 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+.home-hero__lead {
+  margin-top: 20px;
+  font-size: clamp(1.02rem, 1.4vw, 1.2rem);
+  color: rgba(226, 238, 255, 0.82);
+  max-width: 520px;
+  border-left: 3px solid #ffc13b;
+  padding-left: 16px;
+}
+
+.home-hero__actions { display: flex; gap: 14px; margin-top: 34px; flex-wrap: wrap; }
+.home-hero__btn-gold {
+  background: linear-gradient(92deg, #FFC13B, #F59E0B);
+  color: #2a1803;
+  box-shadow: 0 14px 34px -10px rgba(245, 158, 11, 0.6);
+}
+.home-hero__btn-gold:hover { transform: translateY(-2px); box-shadow: 0 18px 44px -10px rgba(245, 158, 11, 0.8); }
+.home-hero__btn-ghost {
+  background: rgba(255, 255, 255, 0.07);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(8px);
+}
+.home-hero__btn-ghost:hover { transform: translateY(-2px); background: rgba(255, 255, 255, 0.14); border-color: rgba(255, 255, 255, 0.4); }
+
+.home-hero__meta {
+  display: flex; gap: 28px; margin-top: 30px; flex-wrap: wrap;
+  font-size: 0.9rem; color: rgba(226, 238, 255, 0.6);
+}
+.home-hero__meta span { display: inline-flex; align-items: center; gap: 8px; }
+.home-hero__meta svg { color: #38bdf8; }
+.home-hero__meta a { color: rgba(226, 238, 255, 0.85); }
+.home-hero__meta a:hover { color: #9fe6ff; }
+
+/* ===================== Responsive ===================== */
+@media (max-width: 720px) {
+  .home-hero { padding-top: calc(var(--nav-h) + 20px); }
+  .home-hero__photo { object-position: center center; }
+  .home-hero__copy { max-width: 100%; }
+  .home-hero__meta { gap: 14px 22px; }
+}
+@media (max-width: 620px) {
+  .home-hero { min-height: 100vh; padding-bottom: 28px; }
+}

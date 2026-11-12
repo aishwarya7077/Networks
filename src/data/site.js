@@ -1,6 +1,7 @@
 import {
   Headset, ShieldCheck, Cloud, Code2, Network, Server,
   MonitorSmartphone, Cctv, BrainCircuit, Building2, Mail, Store,
+  PhoneCall, Layers, Rocket,
 } from 'lucide-react'
 
 export const company = {
@@ -16,128 +17,151 @@ export const company = {
   address: 'R Hub, 100 Feet Road, Madhapur, Hyderabad 500081',
 }
 
+// Order, copy and imagery follow the official RYG Networks "Our Services" document.
 export const services = [
   {
-    id: 'managed-it',
-    icon: Headset,
-    title: 'Managed IT Support',
-    short: 'Proactive maintenance, fast troubleshooting and a friendly helpdesk that keeps your systems healthy and your team productive.',
-    points: [
-      'Proactive monitoring & maintenance',
-      'Rapid-response helpdesk',
-      'Full-lifecycle technical support',
-    ],
-  },
-  {
     id: 'microsoft-cloud',
+    image: '/images/microsoft-cloud.jpg',
     icon: Cloud,
     title: 'Microsoft Cloud & Licensing',
-    short: 'A trusted Microsoft Channel Partner for official licensing, email plans and enterprise tools that digitize and secure your operations.',
+    short: 'Empower your business with modern Microsoft cloud solutions and genuine software licensing. We help organizations improve productivity, collaboration and security through reliable Microsoft technologies — fully set up, migrated and managed for you.',
     points: [
-      'Microsoft Channel Partner services',
-      'Email licensing sized to your team',
-      'Setup, migration & ongoing management',
+      'Microsoft 365 Business & Enterprise Licensing',
+      'Microsoft Azure Cloud Solutions',
+      'Exchange Online & Business Email Solutions',
+      'Microsoft Teams & SharePoint Integration',
+      'Cloud Migration & Data Management',
+      'License Management and Technical Support',
     ],
   },
   {
     id: 'web-development',
+    image: '/images/web-development.jpg',
     icon: Code2,
     title: 'Website & Software Development',
-    short: 'Custom, responsive and secure websites plus web/mobile applications built by our in-house team to automate workflows and delight users.',
+    short: 'Build a strong digital presence with customized website and software development. Our in-house team creates modern, responsive and user-friendly platforms — from corporate sites to complex business applications — all tailored to your goals.',
     points: [
-      'In-house development team',
-      'Corporate sites to complex web apps',
-      'Tailored to your business goals',
-    ],
-  },
-  {
-    id: 'network-security',
-    icon: Network,
-    title: 'Network Setup & Security',
-    short: 'Firewall configuration, VPNs and enterprise-grade security to defend your network and enable safe remote access.',
-    points: [
-      'Firewalls, VPNs & secure Wi-Fi',
-      'Switches, routers & access points',
-      'Enterprise-grade perimeter security',
-    ],
-  },
-  {
-    id: 'it-equipment',
-    icon: Store,
-    title: 'IT Equipment Sales & Service',
-    short: 'Hardware procurement, installation and support — new and certified refurbished laptops, desktops, servers and networking gear.',
-    points: [
-      'Desktops, laptops & servers',
-      'Networking infrastructure & peripherals',
-      'Sales, install, configure & maintain',
-    ],
-  },
-  {
-    id: 'surveillance',
-    icon: Cctv,
-    title: 'Security & Surveillance (CCTV)',
-    short: 'In-house manufactured surveillance hardware — PTZ, day/night and 360° cameras — with tailored security software setups.',
-    points: [
-      'In-house manufactured cameras',
-      'PTZ, night-vision & 360° panoramic',
-      'Custom builds & monitoring options',
-    ],
-  },
-  {
-    id: 'cloud-solutions',
-    icon: Server,
-    title: 'Cloud Solutions',
-    short: 'Cloud migration, backup strategies and productivity suites including Office 365 and Google Workspace to scale securely.',
-    points: [
-      'Cloud migration & backup',
-      'Office 365 & Google Workspace',
-      'Secure, scalable infrastructure',
-    ],
-  },
-  {
-    id: 'consulting',
-    icon: Building2,
-    title: 'IT Consulting & Infrastructure',
-    short: 'Strategic planning, server installation and system integration to build a reliable IT backbone aligned with your goals.',
-    points: [
-      'Strategic IT planning & cost optimization',
-      'Server install & system integration',
-      'Process automation',
+      'Corporate Website Design & Development',
+      'E-commerce Website Development',
+      'Custom Software Development',
+      'Web Applications & Business Portals',
+      'Website Maintenance & Support',
+      'Domain, Hosting & SSL Configuration',
     ],
   },
   {
     id: 'data-ai',
+    image: '/images/data-ai.jpg',
     icon: BrainCircuit,
     title: 'Data Analytics & AI',
-    short: 'BI dashboards, predictive analytics and AI solutions that turn your data into actionable business insights.',
+    short: 'Transform your business data into meaningful insights with intelligent analytics and AI-powered solutions. We help you automate processes, improve decision-making and uncover new opportunities through modern, custom-built technologies that scale with your business.',
     points: [
-      'BI dashboards & reporting',
-      'Predictive analytics',
-      'Custom AI solutions',
+      'Business Intelligence & Data Analytics',
+      'AI-Powered Business Solutions',
+      'Workflow & Process Automation',
+      'Custom AI Integration',
+      'Data Visualization & Reporting',
+      'Intelligent Business Applications',
+    ],
+  },
+  {
+    id: 'it-consulting',
+    image: '/images/it-consulting.jpg',
+    icon: Building2,
+    title: 'IT Consulting & Infrastructure',
+    short: 'Strengthen your IT environment with expert consulting, infrastructure planning and implementation. We design and manage technology that supports your operations, improves efficiency and ensures long-term reliability — backed by dependable ongoing support.',
+    points: [
+      'IT Infrastructure Planning & Setup',
+      'Server Installation & Configuration',
+      'Hardware & Software Management',
+      'IT Annual Maintenance Contracts (AMC)',
+      'Technical Support & Troubleshooting',
+      'IT Infrastructure Upgrades',
+    ],
+  },
+  {
+    id: 'network-security',
+    image: '/images/network-security.jpg',
+    icon: Network,
+    title: 'Network Setup & Security',
+    short: 'Build a secure, stable and high-performance network with our end-to-end solutions. We ensure seamless connectivity, efficient communication and robust protection against threats — from structured cabling to firewalls, enterprise Wi-Fi and secure remote access.',
+    points: [
+      'LAN & WAN Network Setup',
+      'Structured Cabling & Cable Management',
+      'Router, Switch & Firewall Configuration',
+      'Enterprise Wi-Fi & Wireless Solutions',
+      'VPN & Secure Remote Access',
+      'Network Monitoring & Troubleshooting',
+    ],
+  },
+  {
+    id: 'it-equipment',
+    image: '/images/it-equipment.jpg',
+    icon: Store,
+    title: 'IT Equipment Sales & Service',
+    short: 'Get the right technology for your business with quality IT products and professional service. We supply desktops, laptops, servers and networking gear, plus expert installation, configuration, maintenance and reliable after-sales support.',
+    points: [
+      'Desktops, Laptops & Workstations',
+      'Servers & Storage Solutions',
+      'Network Switches & Routers',
+      'Wireless Access Points',
+      'Printers, Scanners & Peripherals',
+      'Hardware Installation & Maintenance',
+    ],
+  },
+  {
+    id: 'surveillance',
+    image: '/images/surveillance.jpg',
+    icon: Cctv,
+    title: 'Security & Surveillance (CCTV)',
+    short: 'Protect your business, property and people with advanced CCTV and surveillance solutions. We deploy modern camera technologies — HD, IP, PTZ and 360° — for reliable monitoring, enhanced visibility and improved safety across your premises.',
+    points: [
+      'HD & IP CCTV Camera Installation',
+      'PTZ & 360° Panoramic Cameras',
+      'Day & Night Vision Cameras',
+      'Two-Way Audio Security Cameras',
+      'DVR & NVR Installation and Configuration',
+      'Remote Monitoring & Mobile Access',
+      'CCTV Maintenance & Technical Support',
+    ],
+  },
+  {
+    id: 'intercom',
+    image: '/images/intercom.jpg',
+    icon: PhoneCall,
+    title: 'Intercom Setups',
+    short: 'Improve communication, convenience and access management with professional intercom solutions. We design and install reliable audio and video systems for offices, commercial buildings, apartments and residential properties of every size.',
+    points: [
+      'Audio & Video Intercom Systems',
+      'IP-Based Intercom Solutions',
+      'Office & Multi-Location Intercom Setup',
+      'Apartment & Residential Intercom Systems',
+      'Door Phone & Visitor Communication',
+      'Installation, Configuration & Maintenance',
     ],
   },
 ]
 
 export const whyChooseUs = [
   {
-    icon: ShieldCheck,
-    title: 'End-to-End Delivery',
-    text: 'All hardware, software and networking handled under one roof — no juggling multiple vendors.',
-  },
-  {
-    icon: MonitorSmartphone,
-    title: 'Customized Approach',
-    text: 'Solutions engineered specifically around your business workflow, not an off-the-shelf template.',
-  },
-  {
-    icon: Cctv,
-    title: 'In-House Manufacturing',
-    text: 'We design and build our own CCTV and surveillance hardware tailored to your exact needs.',
+    icon: Layers,
+    title: 'All-in-One IT Solutions',
+    text: 'Everything your business needs under one roof.',
   },
   {
     icon: Headset,
-    title: 'Reliable Support',
-    text: 'Ongoing technical maintenance and prompt, friendly customer care you can count on.',
+    title: 'Expert Professionals',
+    text: 'Experienced technical team and dedicated support.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Reliable & Secure',
+    text: 'Dependable solutions with a focus on security.',
+  },
+  {
+    icon: Rocket,
+    title: 'Future-Ready Technology',
+    text: 'Scalable solutions designed for business growth.',
   },
 ]
 
@@ -151,8 +175,23 @@ export const stats = [
 export const navLinks = [
   { to: '/', label: 'Home' },
   { to: '/services', label: 'Services' },
+  { to: '/clients', label: 'Clients' },
   { to: '/about', label: 'About' },
   { to: '/contact', label: 'Contact' },
+]
+
+// Clients / partners. Add an entry per client.
+// { name: 'Acme Corp', logo: '/images/clients/acme.png', industry: 'Manufacturing', url: 'https://...' }
+// `logo` is optional — without it a clean monogram tile is shown instead.
+export const clients = [
+  { name: 'Client One', industry: 'Enterprise' },
+  { name: 'Client Two', industry: 'Healthcare' },
+  { name: 'Client Three', industry: 'Retail' },
+  { name: 'Client Four', industry: 'Finance' },
+  { name: 'Client Five', industry: 'Education' },
+  { name: 'Client Six', industry: 'Logistics' },
+  { name: 'Client Seven', industry: 'Hospitality' },
+  { name: 'Client Eight', industry: 'Real Estate' },
 ]
 
 export { Mail }

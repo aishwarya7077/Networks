@@ -6,7 +6,7 @@ export default function ServiceCard({ service, detailed = false }) {
     <article className="card service-card">
       <div className="service-card__media">
         <img
-          src={`/images/${service.id}.png`}
+          src={service.image || `/images/${service.id}.png`}
           alt={`${service.title} — RYG Networks`}
           loading="lazy"
           width="640"

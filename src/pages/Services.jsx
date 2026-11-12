@@ -1,15 +1,8 @@
 import { Link } from 'react-router-dom'
-import { ArrowUpRight, MessageCircle, Cctv, Camera, ScanEye, Video } from 'lucide-react'
-import { company, services } from '../data/site'
+import { ArrowUpRight, MessageCircle, Sparkles } from 'lucide-react'
+import { company, services, whyChooseUs } from '../data/site'
 import ServiceCard from '../components/ServiceCard'
 import Reveal from '../components/Reveal'
-
-const cctvRange = [
-  { icon: Camera, title: 'PTZ Cameras', text: 'Pan-tilt-zoom units with dynamic tracking and remote direction control for large areas.' },
-  { icon: Video, title: 'Day & Night Vision', text: 'Ultra-clear HD recording in low light and full darkness, around the clock.' },
-  { icon: ScanEye, title: '360° Panoramic', text: 'Full-room coverage that eliminates surveillance dead zones.' },
-  { icon: Cctv, title: 'Custom Builds', text: 'Bespoke camera hardware and tailored security software setups for your site.' },
-]
 
 export default function Services() {
   return (
@@ -40,26 +33,22 @@ export default function Services() {
         </div>
       </section>
 
-      {/* CCTV spotlight */}
+      {/* Why choose us */}
       <section className="section section--tight">
         <div className="container">
-          <Reveal className="section-head">
-            <span className="eyebrow"><Cctv size={14} /> In-house manufactured</span>
-            <h2 className="section-title">Security &amp; surveillance, <span className="grad-text">engineered by us</span></h2>
-            <p className="section-sub">
-              We design and manufacture custom surveillance hardware to meet precise operational demands —
-              protecting your assets and your workforce.
-            </p>
+          <Reveal className="section-head section-head--center">
+            <span className="eyebrow"><Sparkles size={14} /> Why Choose Us</span>
+            <h2 className="section-title">Your trusted partner, <span className="grad-text">end to end</span></h2>
           </Reveal>
           <div className="grid grid-4">
-            {cctvRange.map((c, i) => {
-              const Icon = c.icon
+            {whyChooseUs.map((w, i) => {
+              const Icon = w.icon
               return (
-                <Reveal key={c.title} delay={(i % 4) * 0.07}>
+                <Reveal key={w.title} delay={(i % 4) * 0.07}>
                   <div className="card">
                     <span className="icon-badge"><Icon /></span>
-                    <h3 className="service-card__title">{c.title}</h3>
-                    <p className="service-card__text muted">{c.text}</p>
+                    <h3 className="service-card__title">{w.title}</h3>
+                    <p className="service-card__text muted">{w.text}</p>
                   </div>
                 </Reveal>
               )
@@ -72,13 +61,16 @@ export default function Services() {
         <div className="container">
           <Reveal>
             <div className="cta-band">
-              <h2>Not sure which solution fits?</h2>
-              <p>Tell us about your setup and goals — we'll recommend the right mix of services for your budget.</p>
+              <h2>Let's build your business with technology</h2>
+              <p>
+                Whether you are a startup, small business or large enterprise, we have the expertise to
+                support your journey — from planning and implementation to ongoing maintenance and support.
+              </p>
               <div className="cta-band__actions">
                 <a href={company.whatsapp} target="_blank" rel="noreferrer" className="btn btn-whatsapp">
                   <MessageCircle /> Chat on WhatsApp
                 </a>
-                <Link to="/contact" className="btn btn-ghost">Get a free consultation <ArrowUpRight /></Link>
+                <Link to="/contact" className="btn btn-ghost">Discuss your requirements <ArrowUpRight /></Link>
               </div>
             </div>
           </Reveal>

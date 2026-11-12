@@ -235,10 +235,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .icon-badge svg { width: 26px; height: 26px; }
 
 /* ===================== Utility ===================== */
-.grid { display: grid; gap: 24px; }
+.grid { display: grid; gap: 24px; align-items: stretch; }
 .grid-3 { grid-template-columns: repeat(3, 1fr); }
 .grid-2 { grid-template-columns: repeat(2, 1fr); }
 .grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* Equal-height cards: the Reveal wrapper stretches to the row, the card fills it */
+.grid > * { display: flex; }
+.grid > * > .card { width: 100%; height: 100%; }
 
 .divider { height: 1px; background: var(--border); border: none; }
 
